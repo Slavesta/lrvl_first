@@ -26,8 +26,12 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   // пустая, т.к СОЗДАЕМ кат
+      return view('admin.categories.create', [
+        'category'   => [],
+        'categories' => Category::with('children')->where('parent_id', '0')->get(),
+        'delimiter'  => ''
+     ]);
     }
 
     /**
@@ -38,7 +42,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // добавляем запись всех даннных из формы в БАЗУ
+        // Метод для массового заполнения из формы созд.КАТЕГОРИИ и возвращает маршрут со списком категорий
+       Category::create($request->all());
+       return redirect()->route('admin.category.index');
     }
 
     /**
