@@ -179,6 +179,9 @@ return [
         // Packages for CK-EDITOR
         Unisharp\Ckeditor\ServiceProvider::class,
 
+        //Own Providers
+        App\Providers\BlogServiceProvider::class,
+
     ],
 
     /*
