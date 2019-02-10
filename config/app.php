@@ -176,6 +176,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Packages for CK-EDITOR
+        Unisharp\Ckeditor\ServiceProvider::class,
+
     ],
 
     /*
